@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.0.2'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'MockBankLoanService'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(Test) {
+    failOnNoDiscoveredTests = false
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-restclient')
+    implementation('org.springframework.boot:spring-boot-starter-webmvc')
+    implementation(platform('io.awspring.cloud:spring-cloud-aws-dependencies:3.4.0'))
+    implementation(platform('software.amazon.awssdk:bom:2.41.27'))
+    implementation('software.amazon.awssdk:dynamodb')
+    implementation('software.amazon.awssdk:dynamodb-enhanced')
+    compileOnly('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    testImplementation('org.springframework.boot:spring-boot-starter-restclient-test')
+    testImplementation('org.springframework.boot:spring-boot-starter-webmvc-test')
+    testRuntimeOnly('org.junit.platform:junit-platform-launcher')
+}
+
