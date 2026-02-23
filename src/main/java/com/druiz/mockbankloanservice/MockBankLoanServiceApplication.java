@@ -1,4 +1,4 @@
-package com.example.mockbankloanservice;
+package com.druiz.mockbankloanservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
