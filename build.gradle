@@ -24,6 +24,7 @@ tasks.withType(Test) {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-restclient')
+    implementation('org.modelmapper:modelmapper:3.2.6')
     implementation('org.springframework.boot:spring-boot-starter-webmvc')
     implementation(platform('io.awspring.cloud:spring-cloud-aws-dependencies:3.4.0'))
     implementation(platform('software.amazon.awssdk:bom:2.41.27'))
